@@ -26,7 +26,7 @@ prefix genetic_variation: <http://semanticscience.org/resource/SIO_001122>
 #prefix : <http://semanticscience.org/resource/SIO_>
 
 :GeneDiseaseAssociationShape {
-       a                    [ biomarker: genetic_variation: ] ;
+        a                    [ biomarker: genetic_variation: ] ;
         rdfs:comment        rdf:langString* ;
         rdfs:label          rdf:langString* ;
         dcterms:date        xsd:gYear ;
@@ -51,9 +51,18 @@ prefix genetic_variation: <http://semanticscience.org/resource/SIO_001122>
 }
 
 :DiseaseShape {
-       a
+		a	[ disease_disorder_finding: ] ;
+		a	[ disease: ] ;
+		a	[ owl:Class  ] ; 
+        rdfs:comment    rdf:langString* ;
+        rdfs:label      rdf:langString* ;
+        dcterms:title   rdf:langString ;
+        dcterms:identifier      xsd:string ;    
+        void:inDataset  IRI ;
+        skos:exactMatch IRI * ;
+        owl:equivalentClass     IRI *
 }
 
-:GeneShape {
-       a
-}
+#:GeneShape {
+#       a
+#}
