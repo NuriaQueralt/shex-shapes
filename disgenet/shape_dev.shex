@@ -1,0 +1,59 @@
+prefix dctypes: <http://purl.org/dc/terms/> 
+prefix void:  <http://rdfs.org/ns/void#> 
+#prefix ncit:  <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#> 
+prefix owl:   <http://www.w3.org/2002/07/owl#> 
+prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+prefix xsd:   <http://www.w3.org/2001/XMLSchema#> 
+#prefix sio:   <http://semanticscience.org/resource/> 
+prefix skos:  <http://www.w3.org/2004/02/skos/core#> 
+prefix dcterms: <http://purl.org/dc/terms/> 
+prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> 
+prefix up:    <http://purl.uniprot.org/core/> 
+prefix foaf:  <http://xmlns.com/foaf/0.1/> 
+prefix : <http://rdf.disgenet.org/resource/gda/>
+prefix uniprot: <http://purl.uniprot.org/taxonomy/>
+prefix refers_to: <http://semanticscience.org/resource/SIO_000628> 
+prefix has_measurement_value: <http://semanticscience.org/resource/SIO_000216>
+prefix has_source: <http://semanticscience.org/resource/SIO_000253>
+prefix has_evidence: <http://semanticscience.org/resource/SIO_000772>
+prefix disease: <http://semanticscience.org/resource/SIO_010299>
+prefix phenotype: <http://semanticscience.org/resource/SIO_010056>
+prefix group: <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C43359>
+prefix disease_disorder_finding: <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C7057>
+prefix gene: <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16612>
+prefix biomarker: <http://semanticscience.org/resource/SIO_001121>
+prefix genetic_variation: <http://semanticscience.org/resource/SIO_001122>
+#prefix : <http://semanticscience.org/resource/SIO_>
+
+:GeneDiseaseAssociationShape {
+       a                    [ biomarker: genetic_variation: ] ;
+        rdfs:comment        rdf:langString* ;
+        rdfs:label          rdf:langString* ;
+        dcterms:date        xsd:gYear ;
+        dcterms:description  rdf:langString ;
+        dcterms:identifier   xsd:string ;
+        dcterms:title        rdf:langString ;
+        void:inDataset       IRI ;
+        refers_to:       @<DiseaseDisorderOrFinding> ; 
+        refers_to:       @<Gene> ; 
+        has_measurement_value:       . ?;
+        has_source:       IRI ?;
+        has_evidence:       . ?
+}
+
+<DiseaseDisorderOrFinding> {
+  a [ disease: phenotype: group: ] ;
+  a [ disease_disorder_finding: ]
+}
+
+<Gene> {
+  a [ gene: ]
+}
+
+:DiseaseShape {
+       a
+}
+
+:GeneShape {
+       a
+}

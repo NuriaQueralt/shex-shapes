@@ -1,0 +1,32 @@
+prefix dctypes: <http://purl.org/dc/terms/> 
+prefix void:  <http://rdfs.org/ns/void#> 
+prefix ncit:  <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#> 
+prefix owl:   <http://www.w3.org/2002/07/owl#> 
+prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+prefix xsd:   <http://www.w3.org/2001/XMLSchema#> 
+prefix sio:   <http://semanticscience.org/resource/> 
+prefix skos:  <http://www.w3.org/2004/02/skos/core#> 
+prefix dcterms: <http://purl.org/dc/terms/> 
+prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> 
+prefix up:    <http://purl.uniprot.org/core/> 
+prefix foaf:  <http://xmlns.com/foaf/0.1/> 
+prefix : <http://rdf.disgenet.org/resource/gda/>
+prefix uniprot: <http://purl.uniprot.org/taxonomy/>
+
+:GeneDiseaseAssociationShape {
+       a                    [ sio:SIO_001122 sio:SIO_001121 ] ;
+        rdfs:comment        rdf:langString* ;
+        rdfs:label          rdf:langString* ;
+        dcterms:date        xsd:Year ;
+        dcterms:description  xsd:string ;
+        dcterms:identifier   xsd:string ;
+        dcterms:title        xsd:string ;
+        up:organism          [ uniprot:9606 ] ;
+        void:inDataset       IRI ;
+        sio:SIO_000001       . ;
+        sio:SIO_000216       . ;
+        sio:SIO_000253       IRI  ;
+        sio:SIO_000300       . ;
+        sio:SIO_000628       . ;
+        sio:SIO_000772       . 
+}
