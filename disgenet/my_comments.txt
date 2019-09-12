@@ -1,0 +1,13 @@
+# DisGeNET
+Problemes entre l'esquema dibuixat i sparql queries.
+
+Quina és la millor manera de desenvolupar els ShExShapes?
+    1. Manualment SPARQL queries per 2/3 instances?
+    2. Manualment a partir de l'esquema en la web?
+    3. Inferència automàtica a partir d'una instància?
+
+La meva estratègia, a) per construir la shape:
+    1. Manualment a partir de l'esquema de la web
+    2. Manualment a partir de l'exemple que hi ha a la web
+    3. Inferencia a partir de l'exemple que hi ha a la web
+b) validar la shape, via sparql endpoint, contra totes les instàncies de la database
