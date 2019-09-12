@@ -24,6 +24,12 @@ prefix gene: <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16612>
 prefix biomarker: <http://semanticscience.org/resource/SIO_001121>
 prefix genetic_variation: <http://semanticscience.org/resource/SIO_001122>
 #prefix : <http://semanticscience.org/resource/SIO_>
+prefix encodes: <http://semanticscience.org/resource/SIO_010078>
+prefix is_represented_by: <http://semanticscience.org/resource/SIO_000205>
+#prefix protein: <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C17021>
+#prefix gene_symbol: <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C43568>
+#prefix disease_specificity: <http://semanticscience.org/resource/SIO_001351>
+#prefix disease_pleiotropy: <http://semanticscience.org/resource/SIO_001352>
 
 :GeneDiseaseAssociationShape {
         a                    [ biomarker: genetic_variation: ] ;
@@ -63,6 +69,23 @@ prefix genetic_variation: <http://semanticscience.org/resource/SIO_001122>
         owl:equivalentClass     IRI *
 }
 
-#:GeneShape {
-#       a
-#}
+:GeneShape {
+	a	[ gene: ] ;
+        rdfs:comment    rdf:langString* ;
+	rdfs:label      rdf:langString* ;
+	dcterms:title   rdf:langString ;
+	dcterms:identifier      xsd:string ;
+	void:inDataset  IRI ;
+	skos:exactMatch IRI * ;
+	skos:closeMatch  IRI * ;
+        rdfs:seeAlso	IRI * ;
+	encodes:	IRI * ; // 0..* @<Protein>
+	is_represented_by:	IRI ;  // @<GeneSymbol>
+	has_measurement_value:	IRI * // two @<DiseaseSpecificity>, @<DiseasePleiotropy>	
+}
+
+#<Protein> {a}
+#<GeneSymbol> {a}
+#<DiseaseSpecificity> {a}
+#<DiseasePleiotropy> {a}
+#<> {a}
